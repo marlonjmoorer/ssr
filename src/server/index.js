@@ -4,18 +4,18 @@ import React from "react"
 import App from '../shared/App'
 import cors from "cors"
 import {render}from "./template"
-import path from "path"
+import { StaticRouter } from 'react-router-dom';
 const app = express()
-
 app.use(cors())
-
-
 app.use(express.static("public"))
-app.get("*", (req, res, next) => {
-    const markup = renderToString(
-      <App />
+app.get("*", (req, res) => {
+    const context={}
+    const component = renderToString(
+      <StaticRouter location={req.url} context={context}>
+        <App/>
+      </StaticRouter>
     )
-    render(markup).then(html=>res.send(html))
+    render(component).then(html=>res.send(html))
 })
 
 app.listen(3000, () => {
