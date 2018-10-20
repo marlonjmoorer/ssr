@@ -8963,7 +8963,7 @@ var App = function (_Component) {
       return _react2.default.createElement(
         'div',
         null,
-        'Hello World'
+        'Digital Ocean GoodFynd Test'
       );
     }
   }]);

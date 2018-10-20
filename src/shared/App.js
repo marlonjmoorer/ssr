@@ -4,7 +4,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        Hello World
+       Digital Ocean GoodFynd Test
       </div>
     )
   }

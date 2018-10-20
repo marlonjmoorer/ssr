@@ -35,6 +35,7 @@ var serverConfig = {
       { test: /\.(js)$/, use: 'babel-loader' }
     ]
   },
+  devtool: 'source-map',
   plugins: [
     new webpack.DefinePlugin({
       __isBrowser__: "false"
